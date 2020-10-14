@@ -52,6 +52,12 @@ int main()
         //placing bet
         std::cout << "Place your bet, has to be 10 or higher: \n";
         std::cin >> bet;
+        while (std::cin.fail() == true) {
+            std::cin.clear();
+            std::cin.ignore(1000, '\n');
+            std::cout << "Place your bet, has to be 10 or higher: \n";
+            std::cin >> bet;
+        }
         while (bet < 10) {
             std::cout << "bet has to be higher than 10\n";
             std::cin >> bet;
